@@ -1,3 +1,5 @@
+import { Person } from "./entities";
+
 const promo:string[] = ['Marc', 'Paul demore', 'Zorro', 'Albert'];
 const ul = document.querySelector<HTMLElement>('#list');
 
@@ -23,4 +25,12 @@ function draw() {
         ul.append(li);
     }
 
+}
+
+let persons:Person[] = [];
+
+let person:Person = {
+    name: 'Le nom',
+    firstName: 'le prénom',
+    age: 20
 }

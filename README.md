@@ -21,5 +21,3 @@
 5. Dans l'event du button faire qu'on récupère la value de l'input pour la push dans le tableau
 **Bonus:** rajouter de la validation pour faire qu'on ne puisse pas push un truc vide et que quand on ajoute une valeur ça remette l'input à zéro
 **Bonus 2, un peu plus compliqué**: Faire que quand les éléments de la liste s'affichent, il y ait une animation qui les fasse venir depuis l'exterieur de l'ecran (genre de la gauche vers la droite)
-
-(si on veut voir à quoi servait le ul.innerHTML = '' dans draw, vous pouvez retenter en le commentant)
