@@ -25,5 +25,5 @@
 #### III- Transformer notre liste de string en liste de Person
 1. Modifier le typage de la variable promo pour la passer en tableau de Person. Du coup modifier les valeurs qu'on a par défaut (je vous laisse imaginer des names et des ages)
 2. Modifier le draw pour faire en sorte qu'au lieu d'afficher directement item, on affiche le name et le firstName de l'item concaténés
-3. Modifier l'event click du button pour faire en sorte de push un objet Person dans la liste plutôt que juste une string
-4. Du coup rajouter 2 input dans le HTML, un pour le name et un pour l'age
+3. Rajouter 2 inputs dans le HTML, un pour le name et un pour l'age qu'on capture dans le ts
+4. Modifier l'event click du button pour faire en sorte de push un objet Person dans la liste plutôt que juste une string
