@@ -21,3 +21,9 @@
 5. Dans l'event du button faire qu'on récupère la value de l'input pour la push dans le tableau
 **Bonus:** rajouter de la validation pour faire qu'on ne puisse pas push un truc vide et que quand on ajoute une valeur ça remette l'input à zéro
 **Bonus 2, un peu plus compliqué**: Faire que quand les éléments de la liste s'affichent, il y ait une animation qui les fasse venir depuis l'exterieur de l'ecran (genre de la gauche vers la droite)
+
+#### III- Transformer notre liste de string en liste de Person
+1. Modifier le typage de la variable promo pour la passer en tableau de Person. Du coup modifier les valeurs qu'on a par défaut (je vous laisse imaginer des names et des ages)
+2. Modifier le draw pour faire en sorte qu'au lieu d'afficher directement item, on affiche le name et le firstName de l'item concaténés
+3. Modifier l'event click du button pour faire en sorte de push un objet Person dans la liste plutôt que juste une string
+4. Du coup rajouter 2 input dans le HTML, un pour le name et un pour l'age
