@@ -1,7 +1,18 @@
 const promo:string[] = ['Marc', 'Paul demore', 'Zorro', 'Albert'];
 const ul = document.querySelector<HTMLElement>('#list');
 
+const btnAdd = document.querySelector<HTMLButtonElement>('#btnAdd');
+const input = document.querySelector<HTMLInputElement>('input')
+
+
 draw();
+
+
+btnAdd.addEventListener('click', () => {
+    
+    promo.push(input.value)
+    draw()
+});
 
 function draw() {
     ul.innerHTML = '';
