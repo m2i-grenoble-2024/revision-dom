@@ -46,3 +46,9 @@ Mise en place :
 4. Dans le HTML, mettre une div.container-fluid, un h1 et une div.row avec un id list-dog
 5. Capturer le list-dog dans le TS avec un querySelector puis créer une fonction createCard() qui va createElement une div puis qui va assigner au innerHTML avec des backtick le HTML d'une card bootstrap classique (à récupérer sur la doc) et append la div au list-dog
 6. Essayer de lancer cette fonction plusieurs fois et de mettre les classes col qui vont bien sur la div et la row pour qu'on ait 4 card par ligne en lg, 3 en sm et 1 seule en mobile
+
+#### II. Les chiens !
+1. Dans le src/entities.ts créer une nouvelle interface Dog avec un id en number, un name, une breed et une birthdate les 3 en string
+2. Modifier la fonction createCard pour lui rajouter un argument de type Dog et concaténer les informations du chien dans la card avec le ${} (le name dans le titre, la breed et la birthdate dans le text). Faire un appel de cette fonction en lui donnant un objet chien en dur en paramètre (celui ci par exemple : `{id:1,name:'Fido',breed:'Corgi', birthdate:'2023-01-04'}`)
+3. Créer une fonction async displayDogs et dedans utiliser axios pour await un get sur http://localhost:3000/dog (on peut typer le contenu du get en faisant `axios.get<Dog[]>(...)`), récupérer les data de la response (comme dans l'exemple) et faire une boucle dessus et à chaque tour de boucle lancer la fonction createCard en lui donnant l'itérateur
+4. Aller profiter de la liste de chiens qui s'affiche
