@@ -1,0 +1,34 @@
+{
+  "dog": [
+    {
+      "id": "1",
+      "name": "Fido",
+      "breed": "Corgi",
+      "birthdate": "2023-01-04"
+    },
+    {
+      "id": "2",
+      "name": "Rex",
+      "breed": "Dalmatian",
+      "birthdate": "2021-05-12"
+    },
+    {
+      "id": "3",
+      "name": "Planplan",
+      "breed": "Pitbull",
+      "birthdate": "2020-12-23"
+    },
+    {
+      "id": "4",
+      "name": "Fifi",
+      "breed": "Corgi",
+      "birthdate": "2024-02-06"
+    },
+    {
+      "id": "5",
+      "name": "Gerard",
+      "breed": "Pug",
+      "birthdate": "2010-03-23"
+    }
+  ]
+}
