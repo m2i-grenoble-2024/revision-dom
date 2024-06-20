@@ -39,6 +39,10 @@ Mise en place :
 * Dans un autre terminal (il faut garder le premier avec le json-server), lancer le projet TS avec `npm run dev` (s'il tourne déjà pas la peine de le relancer)
 * Pour constater que ça marche, on va sur http://localhost:5173 et là dans la console on devrait avoir un Array de 5 objets chien qui s'affiche et pas d'erreur
 
+#### I. Installation et mise en place structure avec bootstrap
 1. Installer bootstrap avec npm
 2. Créer un nouveau fichier exo-dog.html et un src/exo-dog.ts, faire une structure HTML et charger le script en module comme on a déjà fait dans les 2 autres fichiers
 3. Dans le fichier ts, commencer par mettre un `import 'bootstrap/dist/css/bootstrap.min.css'` (Pour voir si ça marche, on peut mettre un ptit <button class="btn btn-primary">test</button> dans notre html voir s'il s'affiche stylisé)
+4. Dans le HTML, mettre une div.container-fluid, un h1 et une div.row avec un id list-dog
+5. Capturer le list-dog dans le TS avec un querySelector puis créer une fonction createCard() qui va createElement une div puis qui va assigner au innerHTML avec des backtick le HTML d'une card bootstrap classique (à récupérer sur la doc) et append la div au list-dog
+6. Essayer de lancer cette fonction plusieurs fois et de mettre les classes col qui vont bien sur la div et la row pour qu'on ait 4 card par ligne en lg, 3 en sm et 1 seule en mobile
