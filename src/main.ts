@@ -1,3 +1,4 @@
+import axios from 'axios';
 import './style.css'
 
 
@@ -31,3 +32,8 @@ function addition(a:number,b:number):number {
 const maDiv = document.querySelector<HTMLDivElement>('#app');
 maDiv.innerHTML = 'truc';
 
+getDogs();
+async function getDogs() {
+  const response = await axios.get('http://localhost:3000/dog');
+  console.log(response.data);
+}
