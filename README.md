@@ -1,6 +1,10 @@
 # TS + DOM
 
-
+## How To use
+1. Cloner le projet
+2. Installer les dépendances avec `npm install` ou `npm i`
+3. Lancer le projet avec `npm run dev`
+4. Accéder au résultat sur http://localhost:5173
 
 ## Exercices
 ### Manipulation DOM + Liste primitive
@@ -27,3 +31,14 @@
 2. Modifier le draw pour faire en sorte qu'au lieu d'afficher directement item, on affiche le name et le firstName de l'item concaténés
 3. Rajouter 2 inputs dans le HTML, un pour le name et un pour l'age qu'on capture dans le ts
 4. Modifier l'event click du button pour faire en sorte de push un objet Person dans la liste plutôt que juste une string
+
+### Requêtes HTTP depuis JS/TS
+Mise en place : 
+* avoir un db.json avec des datas à l'intérieur (par défaut, 5 dogs)
+* Lancer le json-server avec la commande `npm run mock-api` dans un terminal
+* Dans un autre terminal (il faut garder le premier avec le json-server), lancer le projet TS avec `npm run dev` (s'il tourne déjà pas la peine de le relancer)
+* Pour constater que ça marche, on va sur http://localhost:5173 et là dans la console on devrait avoir un Array de 5 objets chien qui s'affiche et pas d'erreur
+
+1. Installer bootstrap avec npm
+2. Créer un nouveau fichier exo-dog.html et un src/exo-dog.ts, faire une structure HTML et charger le script en module comme on a déjà fait dans les 2 autres fichiers
+3. Dans le fichier ts, commencer par mettre un `import 'bootstrap/dist/css/bootstrap.min.css'` (Pour voir si ça marche, on peut mettre un ptit <button class="btn btn-primary">test</button> dans notre html voir s'il s'affiche stylisé)
