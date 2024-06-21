@@ -66,3 +66,4 @@ Mise en place :
 3. Dans cet eventListener, utiliser axios pour faire un delete vers l'url http://localhost:3000/dog/ et à la fin de l'url concaténer l'id du chien (on oublie pas d'async-await)
 4. Relancer le displayDogs pour mettre à jour la liste des chiens
 
+**Bonus Multisuppression :** Faire en sorte qu'on puisse sélectionner plusieurs chiens (genre au click sur les card, ça ajoute le chien cliqué à un tableau de sélection), et quand on a des chiens sélectionné on a un bouton Delete All qu'on peut cliquer qui va boucler sur la sélection pour supprimer tous les chiens
