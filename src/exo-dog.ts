@@ -7,7 +7,12 @@ const form = document.querySelector<HTMLFormElement>('form');
 
 displayDogs();
 
-
+/**
+ * La fonction displayDogs va faire un appel vers une API Rest qui normalement serait un vrai serveur mais
+ * est ici un utilitaire qui fait une API de test.
+ * On récupère donc les chiens qui viennent du backend/de la base de données et ensuite on boucle dessus pour
+ * les afficher dans le HTML
+ */
 async function displayDogs() {
     const response = await axios.get<Dog[]>('http://localhost:3000/dog');
     rowDogs.innerHTML = '';
@@ -15,7 +20,13 @@ async function displayDogs() {
         createCard(item);
     }
 }
-
+/**
+ * La fonction createCard attend un objet chien en paramètre et va créer un élément HTML, ici une card
+ * Bootstrap avec les classes et la structure qui vont bien. Et dans cette card on vient concaténé les 
+ * différentes propriétés du chien qu'on souhaite afficher. On pourra donc l'appeler avec des chiens différents
+ * pour créer des cards pour chaque chien à afficher
+ * @param dogToDisplay Le chien pour lequel on souhaite créer une card
+ */
 function createCard(dogToDisplay:Dog) {
     const divCol = document.createElement('div');
     divCol.className = 'col';
@@ -32,7 +43,14 @@ function createCard(dogToDisplay:Dog) {
 
     rowDogs.append(divCol);
 }
-
+/**
+ * Ici on surveille le submit du formulaire pour faire que lorsqu'on valide le formulaire (au click ou au
+ * entrée dans un input), on annule le comportement par défaut du formulaire avec le preventDefault (par 
+ * défaut un formulaire recharge la page, et on ne veut pas ça).
+ * Ensuite on récupère chaque valeurs des inputs pour en faire un objet chien qu'on donne à un post pour 
+ * faire persister un nouveau chien sur l'API. Une fois que le chien a persisté, on relance l'affichage
+ * des chiens pour mettre à jour la liste
+ */
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
     
@@ -49,3 +67,30 @@ form.addEventListener('submit', async (event) => {
     
     displayDogs();
 });
+
+/*
+ On peut faire les requêtes HTTP sans utiliser axios en utilisant directement la fonction par défaut
+ de JS qui est le fetch, qui marche bien mais qui est un peu plus fastidieux à utiliser pour certaines choses 
+ */
+
+async function displayDogsWithoutAxios() {
+    const response = await fetch('http://localhost:3000/dog');
+    const data:Dog[] = await response.json();
+
+    rowDogs.innerHTML = '';
+    for (const item of data) {
+        createCard(item);
+    }
+}
+
+async function postWithoutAxios(dog:Dog) {
+    const response = await fetch('http://localhost:3000/dog', {
+        method:'POST',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(dog)
+    });
+
+    displayDogsWithoutAxios();
+}
