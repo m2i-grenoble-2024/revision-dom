@@ -37,10 +37,15 @@ function createCard(dogToDisplay:Dog) {
                 <h3 class="card-title">${dogToDisplay.name}</h3>
                 <p class="card-text">Breed: ${dogToDisplay.breed}</p>
                 <p class="card-text">Birthdate: ${dogToDisplay.birthdate}</p>
+                <button class="btn btn-danger">Delete</button>
             </div>
         </div>
     `;
-
+    const btnDelete = divCol.querySelector('button');
+    btnDelete.addEventListener('click', async () => {
+        await axios.delete('http://localhost:3000/dog/'+dogToDisplay.id);
+        displayDogs();
+    })
     rowDogs.append(divCol);
 }
 /**
