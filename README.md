@@ -59,3 +59,9 @@ Mise en place :
 3. Dans l'event, capturer les 3 inputs puis créer une variable newDog de type Dog à laquelle on va assigner un objet avec la value des 3 inputs. On peut faire un petit console log pour voir si ça fonctionne bien. (dans l'entities, on peut mettre id?:number pour rendre l'id optionnel dans l'objet chien)
 4. Si c'est le cas, alors on utilise axios pour faire cette fois ci un post vers http://localhost:3000/dog en donnant notre variable dog en deuxième argument du post (il va falloir du coup passer la fonction de l'event en async pour pouvoir await le post). Ça devrait techniquement rajouter un chien dans la base de données et si on recharge la page, on le voit apparaître.
 5. Pour faire qu'on ait pas à recharger la page pour voir notre nouveau chien, on fait en sorte de relancer le displayDogs() une fois le post fait.
+
+#### IV. Suppression d'un chien
+1. Modifier le innerHTML du create card pour rajouter un bouton delete en bas de la card
+2. Toujours dans le createCard, utiliser la variable qui contient la div pour faire un querySelector dessus pour récupérer le bouton en question, le mettre dans une variable et rajouter un eventListener au click dessus (on peut faire un console.log du chien dedans pour voir si ça fonctionne)
+3. Dans cet eventListener, utiliser axios pour faire un delete vers l'url http://localhost:3000/dog/ et à la fin de l'url concaténer l'id du chien (on oublie pas d'async-await)
+4. Relancer le displayDogs pour mettre à jour la liste des chiens
