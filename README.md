@@ -65,3 +65,4 @@ Mise en place :
 2. Toujours dans le createCard, utiliser la variable qui contient la div pour faire un querySelector dessus pour récupérer le bouton en question, le mettre dans une variable et rajouter un eventListener au click dessus (on peut faire un console.log du chien dedans pour voir si ça fonctionne)
 3. Dans cet eventListener, utiliser axios pour faire un delete vers l'url http://localhost:3000/dog/ et à la fin de l'url concaténer l'id du chien (on oublie pas d'async-await)
 4. Relancer le displayDogs pour mettre à jour la liste des chiens
+

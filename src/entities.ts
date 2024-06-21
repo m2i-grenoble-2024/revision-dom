@@ -5,7 +5,7 @@ export interface Person {
 }
 
 export interface Dog {
-    id:number;
+    id?:number;
     name:string;
     breed:string;
     birthdate:string;
