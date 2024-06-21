@@ -52,3 +52,10 @@ Mise en place :
 2. Modifier la fonction createCard pour lui rajouter un argument de type Dog et concaténer les informations du chien dans la card avec le ${} (le name dans le titre, la breed et la birthdate dans le text). Faire un appel de cette fonction en lui donnant un objet chien en dur en paramètre (celui ci par exemple : `{id:1,name:'Fido',breed:'Corgi', birthdate:'2023-01-04'}`)
 3. Créer une fonction async displayDogs et dedans utiliser axios pour await un get sur http://localhost:3000/dog (on peut typer le contenu du get en faisant `axios.get<Dog[]>(...)`), récupérer les data de la response (comme dans l'exemple) et faire une boucle dessus et à chaque tour de boucle lancer la fonction createCard en lui donnant l'itérateur
 4. Aller profiter de la liste de chiens qui s'affiche
+
+#### III. Formulaire d'ajout de chien
+1. Dans le html, créer un form avec un button et 3 label/input, 2 en type text, un en type date (pour chacune des propriétés du chien), avec les class bootstrap qui vont bien. 
+2. Côté TS, capturer le form avec un querySelector et lui rajouter un event listener sur son 'submit'. Dans les paramètres de la fonction du listener, rajouter un argument (event) et en premier dans la fonction faire un `event.preventDefault()`
+3. Dans l'event, capturer les 3 inputs puis créer une variable newDog de type Dog à laquelle on va assigner un objet avec la value des 3 inputs. On peut faire un petit console log pour voir si ça fonctionne bien. (dans l'entities, on peut mettre id?:number pour rendre l'id optionnel dans l'objet chien)
+4. Si c'est le cas, alors on utilise axios pour faire cette fois ci un post vers http://localhost:3000/dog en donnant notre variable dog en deuxième argument du post (il va falloir du coup passer la fonction de l'event en async pour pouvoir await le post). Ça devrait techniquement rajouter un chien dans la base de données et si on recharge la page, on le voit apparaître.
+5. Pour faire qu'on ait pas à recharger la page pour voir notre nouveau chien, on fait en sorte de relancer le displayDogs() une fois le post fait.
