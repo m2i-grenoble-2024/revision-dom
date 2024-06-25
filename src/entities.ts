@@ -10,3 +10,13 @@ export interface Dog {
     breed:string;
     birthdate:string;
 }
+
+
+export interface Application {
+    id?:string;
+    appliedOn:string|Date;
+    name:string;
+    firstName:string;
+    session:string;
+    status:'awaiting'|'refused'|'accepted';
+}

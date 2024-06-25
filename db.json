@@ -30,5 +30,39 @@
       "breed": "Pug",
       "birthdate": "2010-03-23"
     }
+  ],
+  "application": [
+    {
+      "id":"test-app1",
+      "appliedOn": "2024-06-25 13:35:54",
+      "name":"Johnson",
+      "firstName":"Pauly",
+      "session":"DAM-Grenoble-2024",
+      "status":"awaiting"
+    },
+    {
+      "id":"test-app2",
+      "appliedOn": "2024-06-20 10:10:54",
+      "name":"Sheik",
+      "firstName":"Souria",
+      "session":"DAM-Lyon-2024",
+      "status":"accepted"
+    },
+    {
+      "id":"test-app3",
+      "appliedOn": "2024-06-21 16:54:10",
+      "name":"Bakh",
+      "firstName":"Otko",
+      "session":"DAM-Grenoble-2024",
+      "status":"refused"
+    },
+    {
+      "id":"test-app4",
+      "appliedOn": "2024-06-24 13:35:54",
+      "name":"Morber",
+      "firstName":"Alexandre",
+      "session":"DAM-Lyon-2024",
+      "status":"awaiting"
+    }
   ]
 }
