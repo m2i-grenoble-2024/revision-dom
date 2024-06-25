@@ -9,11 +9,20 @@
 
 <body>
 
-    <h1>Admin console</h1>
-    <section>
-        <h2>Application list</h2>
-        <div id="application-list" class="row"></div>
-    </section>
+    <div class="container-fluid">
+        <h1>Admin console</h1>
+        <section>
+            <h2>Application list</h2>
+            <div id="application-list" class="row g-3"></div>
+            <div id="controls">
+                <select id="status" class="form-control w-25">
+                    <option>awaiting</option>
+                    <option>refused</option>
+                    <option>accepted</option>
+                </select>
+            </div>
+        </section>
+    </div>
     <script type="module" src="/src/exo-application.ts"></script>
 </body>
 

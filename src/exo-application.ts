@@ -1,8 +1,19 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './exo-application.css';
 import axios from "axios";
 import { Application } from "./entities";
 
 let applications:Application[] = [];
+let selected:Application|null = null;
+
+const controls = document.querySelector<HTMLElement>('#controls');
+const selectStatus = document.querySelector<HTMLSelectElement>('#status');
+
+selectStatus.addEventListener('change', async () => {
+    selected.status = selectStatus.value as any;
+    updateDisplay();
+    await axios.put('http://localhost:3000/application/'+selected.id, selected);
+});
 
 start();
 
@@ -31,13 +42,26 @@ function updateDisplay() {
     target.innerHTML = '';
     for (const item of applications) {
         const divCol = document.createElement('div');
-        divCol.className = 'col-3'
+        divCol.className = 'col-md-3'
+        if(item.id == selected?.id) {
+            divCol.className+= ' selected';
+        }
         divCol.innerHTML = `
-            <article>
+            <article class="${item.status}">
                 <h3>${item.firstName} ${item.name}</h3>
                 <p>${item.session}</p>
             </article>
         `;
+        divCol.addEventListener('click', () => {
+            selected=item;
+            updateDisplay();
+        });
         target.appendChild(divCol);
+    }
+    if(selected) {
+        controls.style.display = 'block';
+        selectStatus.value = selected.status;
+    } else {
+        controls.style.display ='none';
     }
 }
