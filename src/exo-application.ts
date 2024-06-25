@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import { Application } from "./entities";
 
@@ -10,6 +11,7 @@ start();
  */
 async function start() {
     await fetchApplications();
+    
     updateDisplay();
 }
 
@@ -28,11 +30,14 @@ function updateDisplay() {
     const target = document.querySelector('#application-list');
     target.innerHTML = '';
     for (const item of applications) {
-        const article = document.createElement('article');
-        article.innerHTML = `
-            <h3>${item.firstName} ${item.name}</h3>
-            <p>${item.session}</p>
+        const divCol = document.createElement('div');
+        divCol.className = 'col-3'
+        divCol.innerHTML = `
+            <article>
+                <h3>${item.firstName} ${item.name}</h3>
+                <p>${item.session}</p>
+            </article>
         `;
-        target.appendChild(article);
+        target.appendChild(divCol);
     }
 }
